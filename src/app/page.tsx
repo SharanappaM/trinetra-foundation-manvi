@@ -6,6 +6,11 @@ import SectionHeader from "@/components/SectionHeader";
 import BenefitCard from "@/components/BenefitCard";
 import CourseCard from "@/components/CourseCard";
 import TestimonialCard from "@/components/TestimonialCard";
+import { SocialCard } from "@/components/SocialMediaSection";
+import fb from "../../public/fb.png"  
+import insta from "../../public/insta.png"  
+import whatsapp from "../../public/whatsapp.png"  
+import youtube from "../../public/youtube.png"  
 
 const stats    = [
   { value: "1,400+", label: "Children Trained"   },
@@ -40,6 +45,34 @@ const testimonials = [
   { name: "Priya Sharma",  role: "Mother of 9-year-old", initials: "PS", stars: 5, quote: "My son used to struggle with focus. After 4 weeks at Trinetra Foundation, his teacher called to say he has transformed. His confidence is unbelievable!" },
   { name: "Rajesh Kumar",  role: "Father of two students", initials: "RK", stars: 5, quote: "Both my children completed the program. The blindfolded reading demonstration at the closing ceremony had us in tears of joy. Highly recommend!" },
   { name: "Anitha Menon",  role: "Parent from Mysore", initials: "AM", stars: 5, quote: "We enrolled for the online batch and the quality was exceptional. My daughter's memory and calmness have improved beyond what I imagined." },
+];
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    url: "https://facebook.com/shivanagayya.shivu.5",
+    image: fb,
+    color: "#ffffff",
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/trinetra_foundatin_9972488787",
+    image: insta,
+    color: "#ffffff",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@TrinetraFoundationIntuitioncla",
+    image: youtube,
+    color: "#ffffff",
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/919972488787",
+    
+    image:whatsapp,
+   color: "#ffffff",
+  },
 ];
 
 const faqs = [
@@ -245,6 +278,29 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+  <section className="py-20 md:py-28 bg-section-dark relative overflow-hidden">
+  
+
+  <div className="dot-grid absolute inset-0" />
+
+  <div className="container-site relative z-10">
+    
+    <SectionHeader
+      tag="Connect With Us"
+      title="Follow Us Online"
+      subtitle="Stay updated with our latest videos, tips, and community stories."
+      light
+    />
+
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
+      {socialLinks.map((s) => (
+        <SocialCard key={s.name} {...s} />
+      ))}
+    </div>
+
+  </div>
+</section>
 
       {/* ── FAQ ─────────────────────────────────────────────────── */}
       <section className="py-20 md:py-24 bg-cream">

@@ -4,9 +4,41 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useState } from "react";
+import { SocialCard } from "@/components/SocialMediaSection";
+import SectionHeader from "@/components/SectionHeader";
+import fb from "../../../public/fb.png"  
+import insta from "../../../public/insta.png"  
+import whatsapp from "../../../public/whatsapp.png"  
+import youtube from "../../../public/youtube.png"  
 
 // export const metadata: Metadata = { title: "Contact Us", description: "Book a free consultation or enroll in our Gandharividye program." };
-
+const socialLinks = [
+  {
+    name: "Facebook",
+    url: "https://facebook.com/shivanagayya.shivu.5",
+    image: fb,
+    color: "#ffffff",
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/trinetra_foundatin_9972488787",
+    image: insta,
+    color: "#ffffff",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@TrinetraFoundationIntuitioncla",
+    image: youtube,
+    color: "#ffffff",
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/919972488787",
+    
+    image:whatsapp,
+   color: "#ffffff",
+  },
+];
 export default function ContactPage() {
   const [loading, setLoading] = useState(false);
   
@@ -184,6 +216,30 @@ export default function ContactPage() {
         </div>
       </section>
 
+       <section className="py-20 md:py-28 bg-section-dark relative overflow-hidden">
+  
+
+  <div className="dot-grid absolute inset-0" />
+
+  <div className="container-site relative z-10">
+    
+    <SectionHeader
+      tag="Connect With Us"
+      title="Follow Us Online"
+      subtitle="Stay updated with our latest videos, tips, and community stories."
+      light
+    />
+
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
+      {socialLinks.map((s) => (
+        <SocialCard key={s.name} {...s} />
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<br /><br />
       {/* Map placeholder */}
       <section className="pb-20 bg-cream">
         <div className="container-site">
@@ -197,6 +253,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+
+      
 
       <Footer />
     </>

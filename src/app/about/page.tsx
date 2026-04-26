@@ -4,20 +4,50 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SectionHeader from "@/components/SectionHeader";
-
+import { SocialCard } from "@/components/SocialMediaSection";
+import fb from "../../../public/fb.png"  
+import insta from "../../../public/insta.png"  
+import whatsapp from "../../../public/whatsapp.png"  
+import youtube from "../../../public/youtube.png"  
 export const metadata: Metadata = { title: "About Us", description: "Learn about Trinetra Foundation's mission." };
 
 const team = [
   { name: "Shivanagayya Hiremath Guruji", role: "Founder & Chief Instructor", exp: "10+ years in Vedic Science", initials: "SH" },
-  { name: "Sharanamma Hiremath",     role: "Senior Gandharividye Trainer", exp: "8+ years of teaching",         initials: "SH" },
+  { name: "Sharanamma Mathaji",     role: "Senior Gandharividye Trainer", exp: "8+ years of teaching",         initials: "SH" },
   { name: "Sharan Basava",      role: "Child Psychologist & Advisor", exp: "PhD Developmental Psychology", initials: "SB" },
   { name: "Preethi Balaji",       role: "Online Programme Coordinator", exp: "8 years in e-learning",        initials: "PB" },
 ];
-
+const socialLinks = [
+  {
+    name: "Facebook",
+    url: "https://facebook.com/shivanagayya.shivu.5",
+    image: fb,
+    color: "#ffffff",
+  },
+  {
+    name: "Instagram",
+    url: "https://instagram.com/trinetra_foundatin_9972488787",
+    image: insta,
+    color: "#ffffff",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com/@TrinetraFoundationIntuitioncla",
+    image: youtube,
+    color: "#ffffff",
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/919972488787",
+    
+    image:whatsapp,
+   color: "#ffffff",
+  },
+];
 const milestones = [
-  { year: "2018", event: "Trinetra Foundation established in Manvi"  },
-  { year: "2019", event: "First batch of 100+ students trained"          },
-  { year: "2020", event: "Launched online Gandharividye program"         },
+  { year: "2017", event: "Trinetra Foundation established in Manvi"  },
+  { year: "2018", event: "First batch of 100+ students trained"          },
+  { year: "2019", event: "Launched online Gandharividye program"         },
   { year: "2021", event: "Reached 2,000+ children across Karnataka"      },
   { year: "2023", event: "Expanded to all-India online program"          },
   { year: "2025", event: "1,400+ students empowered across India"        },
@@ -65,7 +95,7 @@ export default function AboutPage() {
           <div>
             <SectionHeader tag="Our Story" title="From Ancient Wisdom to Young Minds" center={false} />
             <p className="font-body text-[1.05rem] leading-relaxed text-muted mb-5">
-              Trinetra Foundation was founded in 2019 by Shivanagayya Hiremath Guruji, a dedicated practitioner of Vedic sciences who spent two decades studying ancient Indian knowledge systems, including the legendary practice of Gandharividye.
+              Trinetra Foundation was founded in 2017 by Shivanagayya Hiremath Guruji, a dedicated practitioner of Vedic sciences who spent two decades studying ancient Indian knowledge systems, including the legendary practice of Gandharividye.
             </p>
             <p className="font-body text-[1.05rem] leading-relaxed text-muted mb-5">
               Inspired by the Mahabharata's Gandhari — who chose inner sight over external vision — he developed a structured, safe, and scientific curriculum that brings midbrain activation and third-eye awakening to children of all backgrounds.
@@ -98,6 +128,29 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+       <section className="py-20 md:py-28 bg-section-dark relative overflow-hidden">
+  
+
+  <div className="dot-grid absolute inset-0" />
+
+  <div className="container-site relative z-10">
+    
+    <SectionHeader
+      tag="Connect With Us"
+      title="Follow Us Online"
+      subtitle="Stay updated with our latest videos, tips, and community stories."
+      light
+    />
+
+    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5 mt-10">
+      {socialLinks.map((s) => (
+        <SocialCard key={s.name} {...s} />
+      ))}
+    </div>
+
+  </div>
+</section>
 
       {/* Team */}
       <section className="py-20 md:py-28 bg-cream">
